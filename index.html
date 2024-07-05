@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- I used tailwind to style this site -->
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- tailwind css -->
+    <link rel="stylesheet" href="src/output.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+
+    <style>
+      /* range 3 */
+      #slider {
+        appearance: none;
+        background-color: hsl(174, 77%, 80%);
+        accent-color: hsl(174, 77%, 80%);
+        width: 100%;
+      }
+
+      input::-webkit-slider-thumb {
+        appearance: none;
+        width: 20px;
+        border: 1px solid transparent;
+        padding: 15px;
+        border-radius: 50%;
+        box-shadow: 0px 7px 20px hsl(174, 86%, 45%);
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 10px;
+        background-color: hsl(174, 86%, 45%);
+        background-image: url(images/icon-slider.svg);
+      }
+      input::-webkit-slider-thumb::after {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body class="font-manrope p-0 m-0 w-full h-full box-border">
+    <div class="h-full w-full flex flex-col justify-center items-center">
+      <div
+        class="gap-2 mt-24 mb-12 flex flex-col justify-center items-center text-center"
+      >
+        <img class="absolute" src="images/pattern-circles.svg" alt="" />
+        <p class="text-darkdesaturatedblue font-bold text-2xl">
+          Simple, traffic-based pricing
+        </p>
+        <p class="text-grayishblue text-sm font-semibold">
+          Sign-up for our 30-day trial.
+        </p>
+        <p class="text-sm font-semibold text-grayishblue">
+          No credit card required.
+        </p>
+      </div>
+      <!-- box -->
+      <div
+        class="rounded-lg flex flex-col justify-center items-center w-[90%] md:w-[30%] bg-white pt-8 pb-8 pl-4 pr-4"
+      >
+        <div
+          class="flex flex-col items-center md:grid md:grid-cols-2 md:items-start md:grid-rows-2 w-full"
+        >
+          <p
+            class="md:self-center text-grayishblue uppercase tracking-widest text-sm mb-5 font-bold"
+          >
+            <span id="views">100K</span> Pageviews
+          </p>
+          <div class="w-full md:col-span-2 md:row-start-2">
+            <input
+              id="slider"
+              class="h-2 w-1 mb-10 outline-none rounded-xl"
+              type="range"
+              step="25"
+            />
+          </div>
+          <p class="flex md:place-items-start md:justify-self-end">
+            <span class="text-4xl font-bold">$</span
+            ><span class="text-4xl font-bold" id="dollars">16.00</span>
+            <span class="font-semibold self-center text-grayishblue">
+              &nbsp;&nbsp;/month</span
+            >
+          </p>
+        </div>
+        <div class="text-sm flex gap-4 text-grayishblue font-medium my-7">
+          <p class="align-middle">Monthly Billing</p>
+          <label class="inline-flex items-center cursor-pointer">
+            <input
+              id="cb"
+              type="checkbox"
+              value=""
+              class="sr-only peer peer/d"
+            />
+            <div
+              class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-white-300 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-strongcyan"
+            ></div>
+          </label>
+          <p class="align-middle">Yearly Billing</p>
+          <span
+            class="bg-lightgrayishred rounded-xl text-xs p-1 text-lightred font-bold"
+            >-25% <span class="hidden sm:inline">discount</span></span
+          >
+        </div>
+
+        <p class="h-px mt-2 mb-6 w-full bg-lightgrayishblue1"></p>
+        <div class="md:flex md:space-x-36">
+          <ol class="grid gap-2 text-grayishblue text-center">
+            <li class="">
+              <img src="images/icon-check.svg" class="inline w-3" alt="" />
+              &nbsp;&nbsp;&nbsp;Unlimited websites
+            </li>
+            <li>
+              <img src="images/icon-check.svg" class="inline w-3" alt="" />
+              &nbsp;&nbsp;&nbsp;100% data ownership
+            </li>
+            <li>
+              <img src="images/icon-check.svg" class="inline w-3" alt="" />
+              &nbsp;&nbsp;&nbsp;Email reports
+            </li>
+          </ol>
+          <button
+            class="md:mb-10 hover:text-white bg-darkdesaturatedblue text-lightgrayishblue2 font-semibold text-sm mt-10 py-1 px-8 rounded-full"
+          >
+            Start my trial
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-32 attribution">
+      Challenge by
+      <a
+        class="text-darkdesaturatedblue underline hover:text-black"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="underline"
+        href="https://www.frontendmentor.io/profile/thinakaran123"
+        target="_blank"
+        >Thinakaran</a
+      >.
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
